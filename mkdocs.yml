@@ -1,0 +1,20 @@
+site_name: Keras.js Documentation
+theme: readthedocs
+repo_url: https://github.com/transcranial/keras-js
+pages:
+  - Home: index.md
+  - Model Conversion: conversion.md
+  - Usage:
+    - Browser: usage/browser.md
+    - Webpack: usage/webpack.md
+    - Node.js: usage/node.md
+  - Caching: caching.md
+  - Security: security.md
+  - Visualizations: 
+    - Class-Activation Mapping: visualizations/cam.md
+  - API:
+    - Model: api/model.md
+    - Tensor: api/tensor.md
+    - Layer: api/layer.md
+    - WebGL2: api/webgl2.md
+  - Development: development.md
