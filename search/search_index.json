@@ -1,0 +1,114 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Run Keras models in the browser, with GPU support using WebGL\n\n\n\n\n\n\n\nIntroduction\n\n\nRun \nKeras\n models in the browser, with GPU support provided by WebGL 2. Models can be run in Node.js as well, but only in CPU mode. Because Keras abstracts away a number of frameworks as backends, the models can be trained in any backend, including TensorFlow, CNTK, etc.\n\n\nLibrary version compatibility: Keras 2.1.2\n\n\nFeatures\n\n\nIn GPU mode, computation is performed by WebGL shaders. All layers implement a GPU version of its computation call, so CPU <-> GPU data transfer only occurs at the start and at the end of each predict call. This results in 1-2 orders of magnitude faster performance over CPU mode.\n\n\nThere are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.\n\n\nThere are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are \ncaching\n and \nquantization\n strategies to address this.\n\n\nLimitations\n\n\nWebGL 2\n\n\nTo run GPU mode in the browser, WebGL 2 (which uses the OpenGL ES 3.0 specification) is required. Unfortunately, this is not supported in all browsers, yet. We use extensively \nfeatures exclusive to WebGL 2\n, so this unfortunately is a hard requirement. The capabilities which WebGL 2 affords us greatly outweigh the c`urrent browser restrictions. To date, \nnot all browsers support WebGL 2\n, but support by all major browsers should happen at some point in the future.\n\n\nMAX_TEXTURE_SIZE\n\n\nIn GPU mode, tensors are encoded as WebGL textures. The size of these tensors are limited by the parameter \nMAX_TEXTURE_SIZE\n, which differs by browser/platform/hardware. See \nhere\n for typical expected values. For operations involving tensors where this value is exceeded along any dimension, we break up the tensor into an array of texture fragments, and perform computation on these fragments. This process naturally incurs some overhead.\n\n\nWebWorkers\n\n\nKeras.js can be run in a WebWorker separate from the main thread. Because Keras.js performs a lot of synchronous computations, this can prevent the DOM from being blocked. However, one of the biggest limitations of WebWorkers is the lack of \n<canvas>\n (and thus WebGL) access, so it can only be run in CPU mode for now. In other words, Keras.js in GPU mode can only be run in the main thread. This will not be the case forever: \nOffscreenCanvas is in development\n.\n\n\nLambda layers\n\n\nCurrently, there is no way to port custom Lambda layers, as these will need to be re-implemented in JavaScript. In the future, there will be a means to do so.\n\n\nImplemented Layers\n\n\nAdvanced Activations\n\n\n\n\nELU\n\n\nLeakyReLU\n\n\nPReLU\n\n\nThresholdedReLU\n\n\n\n\nConvolutional\n\n\n\n\nConv1D\n\n\nConv2D\n\n\nConv2DTranspose\n\n\nConv3D\n\n\nCropping1D\n\n\nCropping2D\n\n\nCropping3D\n\n\nSeparableConv2D\n\n\nUpSampling1D\n\n\nUpSampling2D\n\n\nUpSampling3D\n\n\nZeroPadding1D\n\n\nZeroPadding2D\n\n\nZeroPadding3D\n\n\n\n\nCore\n\n\n\n\nActivation\n\n\nDense\n\n\nDropout\n\n\nFlatten\n\n\nPermute\n\n\nRepeatVector\n\n\nReshape\n\n\nSpatialDropout1D\n\n\nSpatialDropout2D\n\n\nSpatialDropout3D\n\n\n\n\nembeddings\n\n\n\n\nEmbedding\n\n\n\n\nMerge\n\n\n\n\nAdd\n\n\nAverage\n\n\nConcatenate\n\n\nDot\n\n\nMaximum\n\n\nMinimum\n\n\nMultiply\n\n\nSubtract\n\n\n\n\nNoise\n\n\n\n\nGaussianDropout\n\n\nGaussianNoise\n\n\n\n\nNormalization\n\n\n\n\nBatchNormalization\n\n\n\n\nPooling\n\n\n\n\nAveragePooling1D\n\n\nAveragePooling2D\n\n\nAveragePooling3D\n\n\nGlobalAveragePooling1D\n\n\nGlobalAveragePooling2D\n\n\nGlobalAveragePooling3D\n\n\nGlobalMaxPooling1D\n\n\nGlobalMaxPooling2D\n\n\nGlobalMaxPooling3D\n\n\nMaxPooling1D\n\n\nMaxPooling2D\n\n\nMaxPooling3D\n\n\n\n\nRecurrent\n\n\n\n\nGRU\n\n\nLSTM\n\n\nSimpleRNN\n\n\n\n\nWrappers\n\n\n\n\nBidirectional\n\n\nTimeDistributed\n\n\n\n\nLicense\n\n\nMIT",
+            "title": "Home"
+        },
+        {
+            "location": "/#introduction",
+            "text": "Run  Keras  models in the browser, with GPU support provided by WebGL 2. Models can be run in Node.js as well, but only in CPU mode. Because Keras abstracts away a number of frameworks as backends, the models can be trained in any backend, including TensorFlow, CNTK, etc.  Library version compatibility: Keras 2.1.2",
+            "title": "Introduction"
+        },
+        {
+            "location": "/#features",
+            "text": "In GPU mode, computation is performed by WebGL shaders. All layers implement a GPU version of its computation call, so CPU <-> GPU data transfer only occurs at the start and at the end of each predict call. This results in 1-2 orders of magnitude faster performance over CPU mode.  There are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.  There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are  caching  and  quantization  strategies to address this.",
+            "title": "Features"
+        },
+        {
+            "location": "/#limitations",
+            "text": "WebGL 2  To run GPU mode in the browser, WebGL 2 (which uses the OpenGL ES 3.0 specification) is required. Unfortunately, this is not supported in all browsers, yet. We use extensively  features exclusive to WebGL 2 , so this unfortunately is a hard requirement. The capabilities which WebGL 2 affords us greatly outweigh the c`urrent browser restrictions. To date,  not all browsers support WebGL 2 , but support by all major browsers should happen at some point in the future.  MAX_TEXTURE_SIZE  In GPU mode, tensors are encoded as WebGL textures. The size of these tensors are limited by the parameter  MAX_TEXTURE_SIZE , which differs by browser/platform/hardware. See  here  for typical expected values. For operations involving tensors where this value is exceeded along any dimension, we break up the tensor into an array of texture fragments, and perform computation on these fragments. This process naturally incurs some overhead.  WebWorkers  Keras.js can be run in a WebWorker separate from the main thread. Because Keras.js performs a lot of synchronous computations, this can prevent the DOM from being blocked. However, one of the biggest limitations of WebWorkers is the lack of  <canvas>  (and thus WebGL) access, so it can only be run in CPU mode for now. In other words, Keras.js in GPU mode can only be run in the main thread. This will not be the case forever:  OffscreenCanvas is in development .  Lambda layers  Currently, there is no way to port custom Lambda layers, as these will need to be re-implemented in JavaScript. In the future, there will be a means to do so.",
+            "title": "Limitations"
+        },
+        {
+            "location": "/#implemented-layers",
+            "text": "Advanced Activations   ELU  LeakyReLU  PReLU  ThresholdedReLU   Convolutional   Conv1D  Conv2D  Conv2DTranspose  Conv3D  Cropping1D  Cropping2D  Cropping3D  SeparableConv2D  UpSampling1D  UpSampling2D  UpSampling3D  ZeroPadding1D  ZeroPadding2D  ZeroPadding3D   Core   Activation  Dense  Dropout  Flatten  Permute  RepeatVector  Reshape  SpatialDropout1D  SpatialDropout2D  SpatialDropout3D   embeddings   Embedding   Merge   Add  Average  Concatenate  Dot  Maximum  Minimum  Multiply  Subtract   Noise   GaussianDropout  GaussianNoise   Normalization   BatchNormalization   Pooling   AveragePooling1D  AveragePooling2D  AveragePooling3D  GlobalAveragePooling1D  GlobalAveragePooling2D  GlobalAveragePooling3D  GlobalMaxPooling1D  GlobalMaxPooling2D  GlobalMaxPooling3D  MaxPooling1D  MaxPooling2D  MaxPooling3D   Recurrent   GRU  LSTM  SimpleRNN   Wrappers   Bidirectional  TimeDistributed",
+            "title": "Implemented Layers"
+        },
+        {
+            "location": "/#license",
+            "text": "MIT",
+            "title": "License"
+        },
+        {
+            "location": "/conversion/",
+            "text": "Format\n\n\nKeras.js uses a custom protocol buffer format binary file that is a serialization of the HDF5-format Keras model and weights file. The \npython/encoder.py\n script performs this necessary conversion.\n\n\nThe HDF5-format Keras model file must include \nboth\n the model architecture and the weights. This is the default behavior for Keras model saving:\n\n\nmodel.save('example.h5')\n\n\n\n\nNote that when using the \nModelCheckpoint\n callback, \nsave_weights_only\n must not be set to \nTrue\n (default is \nFalse\n).\n\n\nWorks for both Keras \nModel\n and \nSequential\n classes:\n\n\nmodel = Sequential()\nmodel.add(...)\n...\n\n\n\n\n...\nmodel = Model(inputs=..., outputs=...)\n\n\n\n\nRequirements\n\n\n\n\nNumPy\n\n\nh5py\n\n\nprotobuf 3.4+\n\n\n\n\nRunning the script\n\n\nFrom the \npython/\n directory:\n\n\n./encoder.py --help\n\n\n\n\nusage: encoder.py [-h] [-n NAME] [-q] hdf5_model_filepath\n\npositional arguments:\n  hdf5_model_filepath\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -n NAME, --name NAME  model name (defaults to filename without extension if\n                        not provided)\n  -q, --quantize        quantize weights to 8-bit unsigned int\n\n\n\n\nExample:\n\n\n./encoder.py -q /path/to/model.h5\n\n\n\n\nQuantization\n\n\nThe quantize flag enables weights-wise 8-bit uint quantization from 32-bit float, using a simple linear min/max scale calculated for every layer weights matrix. This will result in a roughly 4x reduction in the model file size. For example, the model file for Inception-V3 is reduced from 92 MB to 23 MB. Client-side, Keras.js then restores uint8-quantized weights back to float32 during model initialization.\n\n\nThe tradeoff, of course, is slightly reduced performance, which may or may not be perceptible depending on the model type and end application. For a study on the performance effects of quantization, \nthis\n is an excellent resource.",
+            "title": "Model Conversion"
+        },
+        {
+            "location": "/conversion/#format",
+            "text": "Keras.js uses a custom protocol buffer format binary file that is a serialization of the HDF5-format Keras model and weights file. The  python/encoder.py  script performs this necessary conversion.  The HDF5-format Keras model file must include  both  the model architecture and the weights. This is the default behavior for Keras model saving:  model.save('example.h5')  Note that when using the  ModelCheckpoint  callback,  save_weights_only  must not be set to  True  (default is  False ).  Works for both Keras  Model  and  Sequential  classes:  model = Sequential()\nmodel.add(...)\n...  ...\nmodel = Model(inputs=..., outputs=...)",
+            "title": "Format"
+        },
+        {
+            "location": "/conversion/#requirements",
+            "text": "NumPy  h5py  protobuf 3.4+",
+            "title": "Requirements"
+        },
+        {
+            "location": "/conversion/#running-the-script",
+            "text": "From the  python/  directory:  ./encoder.py --help  usage: encoder.py [-h] [-n NAME] [-q] hdf5_model_filepath\n\npositional arguments:\n  hdf5_model_filepath\n\noptional arguments:\n  -h, --help            show this help message and exit\n  -n NAME, --name NAME  model name (defaults to filename without extension if\n                        not provided)\n  -q, --quantize        quantize weights to 8-bit unsigned int  Example:  ./encoder.py -q /path/to/model.h5",
+            "title": "Running the script"
+        },
+        {
+            "location": "/conversion/#quantization",
+            "text": "The quantize flag enables weights-wise 8-bit uint quantization from 32-bit float, using a simple linear min/max scale calculated for every layer weights matrix. This will result in a roughly 4x reduction in the model file size. For example, the model file for Inception-V3 is reduced from 92 MB to 23 MB. Client-side, Keras.js then restores uint8-quantized weights back to float32 during model initialization.  The tradeoff, of course, is slightly reduced performance, which may or may not be perceptible depending on the model type and end application. For a study on the performance effects of quantization,  this  is an excellent resource.",
+            "title": "Quantization"
+        },
+        {
+            "location": "/usage/browser/",
+            "text": "",
+            "title": "Browser"
+        },
+        {
+            "location": "/usage/webpack/",
+            "text": "",
+            "title": "Webpack"
+        },
+        {
+            "location": "/usage/node/",
+            "text": "",
+            "title": "Node.js"
+        },
+        {
+            "location": "/caching/",
+            "text": "",
+            "title": "Caching"
+        },
+        {
+            "location": "/security/",
+            "text": "",
+            "title": "Security"
+        },
+        {
+            "location": "/visualizations/cam/",
+            "text": "",
+            "title": "Class-Activation Mapping"
+        },
+        {
+            "location": "/api/model/",
+            "text": "",
+            "title": "Model"
+        },
+        {
+            "location": "/api/tensor/",
+            "text": "",
+            "title": "Tensor"
+        },
+        {
+            "location": "/api/layer/",
+            "text": "",
+            "title": "Layer"
+        },
+        {
+            "location": "/api/webgl2/",
+            "text": "",
+            "title": "WebGL2"
+        },
+        {
+            "location": "/development/",
+            "text": "Library\n\n\nRun \nyarn\n or \nnpm install\n to install all dependencies. To run all tests, start \nnpm run server\n and simply go to \nhttp://localhost:3000/test/\n. All tests will automatically run. Open up browser devtools for additional test data info.\n\n\nFor development of Keras.js, start:\n\n\nnpm run watch\n\n\n\n\nEditing of any file in \nsrc/\n will trigger webpack to update \ndist/keras.min.js\n. The development server explicitly has caching turned off, so simply refresh to load the updated build.\n\n\nRunning \nnpm run build\n will build both a UMD bundle, located in \ndist/\n, as well as babel-transpiled source, located in \nlib/\n.\n\n\nTests\n\n\nThere are extensive tests for each implemented layer. See \nnotebooks/\n for the jupyter notebooks creating the structure and data for these tests. These tests are by no means exhaustive, and many more (especially various graph configurations) will be added.\n\n\nDemos\n\n\nData files for the demos are located at \ndemos/data/\n. These are located in the \nkeras-js-demos-data\n repo--simply clone and copy the contents to \ndemos/data/\n.\n\n\nSee \nnotebooks/demos/\n for the jupyter notebooks creating the HDF5-format Keras model files, which are then used to generate Keras.js binary files.\n\n\nFor development of Keras.js demos, start:\n\n\nnpm run demos:watch",
+            "title": "Development"
+        }
+    ]
+}

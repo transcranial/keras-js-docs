@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Model Conversion - Keras.js Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="../css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Model Conversion";
+    var mkdocs_page_input_path = "conversion.md";
+    var mkdocs_page_url = "/conversion/";
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Keras.js Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Model Conversion</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#format">Format</a></li>
+    
+
+    <li class="toctree-l2"><a href="#requirements">Requirements</a></li>
+    
+
+    <li class="toctree-l2"><a href="#running-the-script">Running the script</a></li>
+    
+
+    <li class="toctree-l2"><a href="#quantization">Quantization</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Usage</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../usage/browser/">Browser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../usage/webpack/">Webpack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../usage/node/">Node.js</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../caching/">Caching</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../security/">Security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Visualizations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../visualizations/cam/">Class-Activation Mapping</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../api/model/">Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/tensor/">Tensor</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/layer/">Layer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../api/webgl2/">WebGL2</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../development/">Development</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Keras.js Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Model Conversion</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/transcranial/keras-js/edit/master/docs/conversion.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h2 id="format">Format</h2>
+<p>Keras.js uses a custom protocol buffer format binary file that is a serialization of the HDF5-format Keras model and weights file. The <code>python/encoder.py</code> script performs this necessary conversion.</p>
+<p>The HDF5-format Keras model file must include <em>both</em> the model architecture and the weights. This is the default behavior for Keras model saving:</p>
+<pre><code class="py">model.save('example.h5')
+</code></pre>
+
+<p>Note that when using the <a href="https://keras.io/callbacks/#modelcheckpoint">ModelCheckpoint</a> callback, <code>save_weights_only</code> must not be set to <code>True</code> (default is <code>False</code>).</p>
+<p>Works for both Keras <code>Model</code> and <code>Sequential</code> classes:</p>
+<pre><code class="py">model = Sequential()
+model.add(...)
+...
+</code></pre>
+
+<pre><code class="py">...
+model = Model(inputs=..., outputs=...)
+</code></pre>
+
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>NumPy</li>
+<li>h5py</li>
+<li>protobuf 3.4+</li>
+</ul>
+<h2 id="running-the-script">Running the script</h2>
+<p>From the <code>python/</code> directory:</p>
+<pre><code class="sh">./encoder.py --help
+</code></pre>
+
+<pre><code class="text">usage: encoder.py [-h] [-n NAME] [-q] hdf5_model_filepath
+
+positional arguments:
+  hdf5_model_filepath
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -n NAME, --name NAME  model name (defaults to filename without extension if
+                        not provided)
+  -q, --quantize        quantize weights to 8-bit unsigned int
+</code></pre>
+
+<p>Example:</p>
+<pre><code class="sh">./encoder.py -q /path/to/model.h5
+</code></pre>
+
+<h2 id="quantization">Quantization</h2>
+<p>The quantize flag enables weights-wise 8-bit uint quantization from 32-bit float, using a simple linear min/max scale calculated for every layer weights matrix. This will result in a roughly 4x reduction in the model file size. For example, the model file for Inception-V3 is reduced from 92 MB to 23 MB. Client-side, Keras.js then restores uint8-quantized weights back to float32 during model initialization.</p>
+<p>The tradeoff, of course, is slightly reduced performance, which may or may not be perceptible depending on the model type and end application. For a study on the performance effects of quantization, <a href="https://github.com/aaron-xichen/pytorch-playground">this</a> is an excellent resource.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../usage/browser/" class="btn btn-neutral float-right" title="Browser">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/transcranial/keras-js/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../usage/browser/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/require.js"></script>
+      <script src="../search/search.js"></script>
+
+</body>
+</html>

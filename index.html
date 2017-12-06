@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="None">
+  
+  <link rel="shortcut icon" href="./img/favicon.ico">
+  <title>Home - Keras.js Documentation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="./css/highlight.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Home";
+    var mkdocs_page_input_path = "index.md";
+    var mkdocs_page_url = "/";
+  </script>
+  
+  <script src="./js/jquery-2.1.1.min.js"></script>
+  <script src="./js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href="." class="icon icon-home"> Keras.js Documentation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href=".">Home</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
+    
+
+    <li class="toctree-l2"><a href="#features">Features</a></li>
+    
+
+    <li class="toctree-l2"><a href="#limitations">Limitations</a></li>
+    
+
+    <li class="toctree-l2"><a href="#implemented-layers">Implemented Layers</a></li>
+    
+
+    <li class="toctree-l2"><a href="#license">License</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="conversion/">Model Conversion</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Usage</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="usage/browser/">Browser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="usage/webpack/">Webpack</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="usage/node/">Node.js</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="caching/">Caching</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="security/">Security</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Visualizations</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="visualizations/cam/">Class-Activation Mapping</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">API</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="api/model/">Model</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/tensor/">Tensor</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/layer/">Layer</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="api/webgl2/">WebGL2</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="development/">Development</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href=".">Keras.js Documentation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+      
+        <a href="https://github.com/transcranial/keras-js/edit/master/docs/index.md"
+          class="icon icon-github"> Edit on GitHub</a>
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p align="center">
+  <a href="https://transcranial.github.io/keras-js">
+    <img src="https://cdn.rawgit.com/transcranial/keras-js/73aa4cca/assets/logo.svg" width="300px" />
+  </a>
+</p>
+
+<p align="center">
+  <strong>Run Keras models in the browser, with GPU support using WebGL</strong>
+</p>
+
+<p><br/></p>
+<h2 id="introduction">Introduction</h2>
+<p>Run <a href="https://github.com/fchollet/keras">Keras</a> models in the browser, with GPU support provided by WebGL 2. Models can be run in Node.js as well, but only in CPU mode. Because Keras abstracts away a number of frameworks as backends, the models can be trained in any backend, including TensorFlow, CNTK, etc.</p>
+<p>Library version compatibility: Keras 2.1.2</p>
+<h2 id="features">Features</h2>
+<p>In GPU mode, computation is performed by WebGL shaders. All layers implement a GPU version of its computation call, so CPU &lt;-&gt; GPU data transfer only occurs at the start and at the end of each predict call. This results in 1-2 orders of magnitude faster performance over CPU mode.</p>
+<p>There are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.</p>
+<p>There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are <a href="http://localhost:8000/caching/">caching</a> and <a href="http://localhost:8000/conversion/#quantization">quantization</a> strategies to address this.</p>
+<h2 id="limitations">Limitations</h2>
+<p><strong>WebGL 2</strong></p>
+<p>To run GPU mode in the browser, WebGL 2 (which uses the OpenGL ES 3.0 specification) is required. Unfortunately, this is not supported in all browsers, yet. We use extensively <a href="https://webgl2fundamentals.org/webgl/lessons/webgl2-whats-new.html">features exclusive to WebGL 2</a>, so this unfortunately is a hard requirement. The capabilities which WebGL 2 affords us greatly outweigh the c`urrent browser restrictions. To date, <a href="https://caniuse.com/webgl2">not all browsers support WebGL 2</a>, but support by all major browsers should happen at some point in the future.</p>
+<p><strong>MAX_TEXTURE_SIZE</strong></p>
+<p>In GPU mode, tensors are encoded as WebGL textures. The size of these tensors are limited by the parameter <code>MAX_TEXTURE_SIZE</code>, which differs by browser/platform/hardware. See <a href="http://webglstats.com/">here</a> for typical expected values. For operations involving tensors where this value is exceeded along any dimension, we break up the tensor into an array of texture fragments, and perform computation on these fragments. This process naturally incurs some overhead.</p>
+<p><strong>WebWorkers</strong></p>
+<p>Keras.js can be run in a WebWorker separate from the main thread. Because Keras.js performs a lot of synchronous computations, this can prevent the DOM from being blocked. However, one of the biggest limitations of WebWorkers is the lack of <code>&lt;canvas&gt;</code> (and thus WebGL) access, so it can only be run in CPU mode for now. In other words, Keras.js in GPU mode can only be run in the main thread. This will not be the case forever: <a href="https://caniuse.com/offscreencanvas">OffscreenCanvas is in development</a>.</p>
+<p><strong>Lambda layers</strong></p>
+<p>Currently, there is no way to port custom Lambda layers, as these will need to be re-implemented in JavaScript. In the future, there will be a means to do so.</p>
+<h2 id="implemented-layers">Implemented Layers</h2>
+<p><strong>Advanced Activations</strong></p>
+<ul>
+<li>ELU</li>
+<li>LeakyReLU</li>
+<li>PReLU</li>
+<li>ThresholdedReLU</li>
+</ul>
+<p><strong>Convolutional</strong></p>
+<ul>
+<li>Conv1D</li>
+<li>Conv2D</li>
+<li>Conv2DTranspose</li>
+<li>Conv3D</li>
+<li>Cropping1D</li>
+<li>Cropping2D</li>
+<li>Cropping3D</li>
+<li>SeparableConv2D</li>
+<li>UpSampling1D</li>
+<li>UpSampling2D</li>
+<li>UpSampling3D</li>
+<li>ZeroPadding1D</li>
+<li>ZeroPadding2D</li>
+<li>ZeroPadding3D</li>
+</ul>
+<p><strong>Core</strong></p>
+<ul>
+<li>Activation</li>
+<li>Dense</li>
+<li>Dropout</li>
+<li>Flatten</li>
+<li>Permute</li>
+<li>RepeatVector</li>
+<li>Reshape</li>
+<li>SpatialDropout1D</li>
+<li>SpatialDropout2D</li>
+<li>SpatialDropout3D</li>
+</ul>
+<p><strong>embeddings</strong></p>
+<ul>
+<li>Embedding</li>
+</ul>
+<p><strong>Merge</strong></p>
+<ul>
+<li>Add</li>
+<li>Average</li>
+<li>Concatenate</li>
+<li>Dot</li>
+<li>Maximum</li>
+<li>Minimum</li>
+<li>Multiply</li>
+<li>Subtract</li>
+</ul>
+<p><strong>Noise</strong></p>
+<ul>
+<li>GaussianDropout</li>
+<li>GaussianNoise</li>
+</ul>
+<p><strong>Normalization</strong></p>
+<ul>
+<li>BatchNormalization</li>
+</ul>
+<p><strong>Pooling</strong></p>
+<ul>
+<li>AveragePooling1D</li>
+<li>AveragePooling2D</li>
+<li>AveragePooling3D</li>
+<li>GlobalAveragePooling1D</li>
+<li>GlobalAveragePooling2D</li>
+<li>GlobalAveragePooling3D</li>
+<li>GlobalMaxPooling1D</li>
+<li>GlobalMaxPooling2D</li>
+<li>GlobalMaxPooling3D</li>
+<li>MaxPooling1D</li>
+<li>MaxPooling2D</li>
+<li>MaxPooling3D</li>
+</ul>
+<p><strong>Recurrent</strong></p>
+<ul>
+<li>GRU</li>
+<li>LSTM</li>
+<li>SimpleRNN</li>
+</ul>
+<p><strong>Wrappers</strong></p>
+<ul>
+<li>Bidirectional</li>
+<li>TimeDistributed</li>
+</ul>
+<h2 id="license">License</h2>
+<p><a href="https://github.com/transcranial/keras-js/blob/master/LICENSE">MIT</a></p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="conversion/" class="btn btn-neutral float-right" title="Model Conversion">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+          <a href="https://github.com/transcranial/keras-js/" class="fa fa-github" style="float: left; color: #fcfcfc"> GitHub</a>
+      
+      
+      
+        <span style="margin-left: 15px"><a href="conversion/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '.';</script>
+    <script src="./js/theme.js"></script>
+      <script src="./search/require.js"></script>
+      <script src="./search/search.js"></script>
+
+</body>
+</html>
+
+<!--
+MkDocs version : 0.17.2
+Build Date UTC : 2017-12-06 14:24:13
+-->
