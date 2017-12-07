@@ -56,19 +56,34 @@
             "title": "Quantization"
         },
         {
-            "location": "/usage/browser/",
+            "location": "/setup/browser/",
             "text": "",
             "title": "Browser"
         },
         {
-            "location": "/usage/webpack/",
+            "location": "/setup/webpack/",
             "text": "",
             "title": "Webpack"
         },
         {
-            "location": "/usage/node/",
+            "location": "/setup/node/",
             "text": "",
             "title": "Node.js"
+        },
+        {
+            "location": "/usage/",
+            "text": "Create new model\n\n\nOn instantiation, data is loaded using XHR (same-domain or CORS required), and layers are initialized as a directed acyclic graph:\n\n\n// in the browser, URLs can be relative or absolute\nconst model = new KerasJS.Model({\n  filepath: 'path/to/model.bin',\n  gpu: true\n})\n\n// in Node.js, gpu flag will always be off\n// paths can be filesystem paths or absolute URLs\n// must be specified if filesystem path\nconst model = new KerasJS.Model({\n  filepath: 'path/to/model.bin',\n  filesystem: true\n})\n\n\n\n\nAdditional configuration options (shown below are default values):\n\n\n{\n  filepath: 'path/to/model.bin',\n  headers: {},\n  filesystem: false,\n  gpu: false,\n  transferLayerOutputs: false,\n  pauseAfterLayerCalls: false,\n  visualizations: []\n}\n\n\n\n\nPredict\n\n\nThe class method \nready()\n returns a Promise which resolves when initialization steps are complete. Then, use \npredict()\n to run a forward pass with the input data (also returns a Promise).\n\n\nFor Keras \nModel\n models, the input data object has keys corresponding to the names of the input layers. For \nSequential\n models, the single key should be \ninput\n. Values are the flattened Float32Array representations of the input data. Input tensor shapes are specified in the model config.\n\n\nSimilarly, the output data object has keys corresponding to the names of the output layers for Keras \nModel\n models. For \nSequential\n models, the single key will be \noutput\n.\n\n\nmodel\n  .ready()\n  .then(() => {\n    // input data object keyed by names of the input layers\n    // or `input` for Sequential models\n    // values are the flattened Float32Array data\n    // (input tensor shapes are specified in the model config)\n    const inputData = {\n      input_1: new Float32Array(data)\n    }\n\n    // make predictions\n    return model.predict(inputData)\n  })\n  .then(outputData => {\n    // outputData is an object keyed by names of the output layers\n    // or `output` for Sequential models\n    // e.g.,\n    // outputData['fc1000']\n  })\n  .catch(err => {\n    // handle error\n  })\n\n\n\n\nAlternatively, we could also use async/await:\n\n\ntry {\n  await model.ready()\n  const inputData = {\n    input_1: new Float32Array(data)\n  }\n  const outputData = await model.predict(inputData)\n} catch (err) {\n  // handle error\n}",
+            "title": "Usage"
+        },
+        {
+            "location": "/usage/#create-new-model",
+            "text": "On instantiation, data is loaded using XHR (same-domain or CORS required), and layers are initialized as a directed acyclic graph:  // in the browser, URLs can be relative or absolute\nconst model = new KerasJS.Model({\n  filepath: 'path/to/model.bin',\n  gpu: true\n})\n\n// in Node.js, gpu flag will always be off\n// paths can be filesystem paths or absolute URLs\n// must be specified if filesystem path\nconst model = new KerasJS.Model({\n  filepath: 'path/to/model.bin',\n  filesystem: true\n})  Additional configuration options (shown below are default values):  {\n  filepath: 'path/to/model.bin',\n  headers: {},\n  filesystem: false,\n  gpu: false,\n  transferLayerOutputs: false,\n  pauseAfterLayerCalls: false,\n  visualizations: []\n}",
+            "title": "Create new model"
+        },
+        {
+            "location": "/usage/#predict",
+            "text": "The class method  ready()  returns a Promise which resolves when initialization steps are complete. Then, use  predict()  to run a forward pass with the input data (also returns a Promise).  For Keras  Model  models, the input data object has keys corresponding to the names of the input layers. For  Sequential  models, the single key should be  input . Values are the flattened Float32Array representations of the input data. Input tensor shapes are specified in the model config.  Similarly, the output data object has keys corresponding to the names of the output layers for Keras  Model  models. For  Sequential  models, the single key will be  output .  model\n  .ready()\n  .then(() => {\n    // input data object keyed by names of the input layers\n    // or `input` for Sequential models\n    // values are the flattened Float32Array data\n    // (input tensor shapes are specified in the model config)\n    const inputData = {\n      input_1: new Float32Array(data)\n    }\n\n    // make predictions\n    return model.predict(inputData)\n  })\n  .then(outputData => {\n    // outputData is an object keyed by names of the output layers\n    // or `output` for Sequential models\n    // e.g.,\n    // outputData['fc1000']\n  })\n  .catch(err => {\n    // handle error\n  })  Alternatively, we could also use async/await:  try {\n  await model.ready()\n  const inputData = {\n    input_1: new Float32Array(data)\n  }\n  const outputData = await model.predict(inputData)\n} catch (err) {\n  // handle error\n}",
+            "title": "Predict"
         },
         {
             "location": "/caching/",
