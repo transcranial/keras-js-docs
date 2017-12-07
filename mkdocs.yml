@@ -4,10 +4,11 @@ repo_url: https://github.com/transcranial/keras-js
 pages:
   - Home: index.md
   - Model Conversion: conversion.md
-  - Usage:
-    - Browser: usage/browser.md
-    - Webpack: usage/webpack.md
-    - Node.js: usage/node.md
+  - Setup:
+    - Browser: setup/browser.md
+    - Webpack: setup/webpack.md
+    - Node.js: setup/node.md
+  - Usage: usage.md
   - Caching: caching.md
   - Security: security.md
   - Visualizations: 
