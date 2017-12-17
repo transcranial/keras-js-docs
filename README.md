@@ -1,4 +1,6 @@
-# [Keras.js](https://github.com/transcranial/keras-js) documentation
+# [Keras.js documentation](https://transcranial.github.io/keras-js-docs)
+
+Documentation source for [Keras.js](https://github.com/transcranial/keras-js)
 
 * Development:
 
@@ -7,3 +9,5 @@
 * Deploy:
 
   `mkdocs gh-deploy`
+
+[MIT License](https://github.com/transcranial/keras-js-docs/blob/master/LICENSE)
