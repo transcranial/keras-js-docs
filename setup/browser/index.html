@@ -96,13 +96,12 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Visualizations</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../visualizations/cam/">Class-Activation Mapping</a>
-                </li>
-    </ul>
+    <a class="" href="../../diagrams/">Architecture Diagrams</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../visualizations/">Visualizations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -172,7 +171,16 @@
           <div role="main">
             <div class="section">
               
-                
+                <p>To directly use the UMD build of Keras.js, include the library in your index.html or html template file. The <a href="https://unpkg.com/">unpkg</a> CDN is a good way to go here:</p>
+<pre><code class="html">&lt;script src=&quot;https://unpkg.com/keras-js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>This will always point to the latest release on NPM. You can also use a specific version/tag via URLs like <code>https://unpkg.com/keras-js@1.0.2</code>.</p>
+<p><code>KerasJS</code> will now be in the global namespace and can be used directly:</p>
+<pre><code class="js">const model = new KerasJS.Model({
+  // ...
+})
+</code></pre>
               
             </div>
           </div>

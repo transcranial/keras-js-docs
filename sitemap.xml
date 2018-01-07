@@ -4,7 +4,7 @@
     
     <url>
      <loc>/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -12,7 +12,7 @@
     
     <url>
      <loc>/conversion/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -21,19 +21,19 @@
         
     <url>
      <loc>/setup/browser/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/setup/webpack/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/setup/node/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -42,7 +42,7 @@
     
     <url>
      <loc>/usage/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -50,7 +50,7 @@
     
     <url>
      <loc>/caching/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
@@ -58,44 +58,50 @@
     
     <url>
      <loc>/security/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     
 
     
-        
     <url>
-     <loc>/visualizations/cam/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <loc>/diagrams/</loc>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
+    
+
+    
+    <url>
+     <loc>/visualizations/</loc>
+     <lastmod>2018-01-06</lastmod>
+     <changefreq>daily</changefreq>
+    </url>
     
 
     
         
     <url>
      <loc>/api/model/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/tensor/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/layer/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
     <url>
      <loc>/api/webgl2/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
         
@@ -104,7 +110,7 @@
     
     <url>
      <loc>/development/</loc>
-     <lastmod>2017-12-07</lastmod>
+     <lastmod>2018-01-06</lastmod>
      <changefreq>daily</changefreq>
     </url>
     

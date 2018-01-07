@@ -96,13 +96,12 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Visualizations</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../../visualizations/cam/">Class-Activation Mapping</a>
-                </li>
-    </ul>
+    <a class="" href="../../diagrams/">Architecture Diagrams</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../../visualizations/">Visualizations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -172,7 +171,43 @@
           <div role="main">
             <div class="section">
               
-                
+                <p>If you use webpack for building your app, you can easily add and import Keras.js as a dependency:</p>
+<pre><code class="sh">yarn add keras-js
+# or
+npm install keras-js --save
+</code></pre>
+
+<pre><code class="js">import KerasJS from 'keras-js'
+</code></pre>
+
+<p><strong>Webpack Config</strong></p>
+<p>The following must be included in your webpack configuration file:</p>
+<pre><code class="js">node: {
+  fs: 'empty'
+}
+</code></pre>
+
+<p>Otherwise when building your app's webpack bundle, you may encounter the following error:</p>
+<pre><code>ERROR in ./node_modules/keras-js/lib/Model.js
+Module not found: Error: Can't resolve 'fs' in '/usr/src/app/node_modules/keras-js/lib'
+</code></pre>
+
+<p><strong>UglifyJS</strong></p>
+<p>If you use UglifyJS when building your bundle, it is important that the option <code>compress</code> be set to <code>false</code>. The default is <code>true</code>, so UglifyJS will drop unreferenced functions and variables (simple direct variable assignments do not count as references).</p>
+<p><em>This is important, as a bundle built using the default options will not work!</em></p>
+<p>For <a href="https://github.com/webpack-contrib/uglifyjs-webpack-plugin">uglifyjs-webpack-plugin</a> 1.0+ (which uses <a href="https://github.com/mishoo/UglifyJS2/tree/harmony">UglifyJS v3</a>):</p>
+<pre><code class="js">new UglifyJsPlugin({
+  // ...
+  uglifyOptions: { compress: { unused: false } }
+})
+</code></pre>
+
+<p>For <a href="https://github.com/webpack-contrib/uglifyjs-webpack-plugin">uglifyjs-webpack-plugin</a> &lt; 1.0:</p>
+<pre><code class="js">new UglifyJsPlugin({
+  // ...
+  compress: { unused: false }
+})
+</code></pre>
               
             </div>
           </div>

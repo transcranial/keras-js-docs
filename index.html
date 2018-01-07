@@ -111,13 +111,12 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Visualizations</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="visualizations/cam/">Class-Activation Mapping</a>
-                </li>
-    </ul>
+    <a class="" href="diagrams/">Architecture Diagrams</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="visualizations/">Visualizations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -200,7 +199,7 @@
 <h2 id="features">Features</h2>
 <p>In GPU mode, computation is performed by WebGL shaders. All layers implement a GPU version of its computation call, so CPU &lt;-&gt; GPU data transfer only occurs at the start and at the end of each predict call. This results in 1-2 orders of magnitude faster performance over CPU mode.</p>
 <p>There are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.</p>
-<p>There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are <a href="http://localhost:8000/caching/">caching</a> and <a href="http://localhost:8000/conversion/#quantization">quantization</a> strategies to address this.</p>
+<p>There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are <a href="./caching">caching</a> and <a href="./conversion/#quantization">quantization</a> strategies to address this.</p>
 <h2 id="limitations">Limitations</h2>
 <p><strong>WebGL 2</strong></p>
 <p>To run GPU mode in the browser, WebGL 2 (which uses the OpenGL ES 3.0 specification) is required. Unfortunately, this is not supported in all browsers, yet. We use extensively <a href="https://webgl2fundamentals.org/webgl/lessons/webgl2-whats-new.html">features exclusive to WebGL 2</a>, so this unfortunately is a hard requirement. The capabilities which WebGL 2 affords us greatly outweigh the c`urrent browser restrictions. To date, <a href="https://caniuse.com/webgl2">not all browsers support WebGL 2</a>, but support by all major browsers should happen at some point in the future.</p>
@@ -351,5 +350,5 @@
 
 <!--
 MkDocs version : 0.17.2
-Build Date UTC : 2017-12-07 05:50:04
+Build Date UTC : 2018-01-07 04:06:49
 -->

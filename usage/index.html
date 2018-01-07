@@ -102,13 +102,12 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Visualizations</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../visualizations/cam/">Class-Activation Mapping</a>
-                </li>
-    </ul>
+    <a class="" href="../diagrams/">Architecture Diagrams</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../visualizations/">Visualizations</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -174,24 +173,24 @@
           <div role="main">
             <div class="section">
               
-                <h3 id="create-new-model">Create new model</h3>
-<p>On instantiation, data is loaded using XHR (same-domain or CORS required), and layers are initialized as a directed acyclic graph:</p>
-<pre><code class="js">// in the browser, URLs can be relative or absolute
-const model = new KerasJS.Model({
+                <p>See the Setup section (<a href="../setup/browser">Browser</a>, <a href="../setup/webpack">Webpack</a>, or <a href="../setup/node">Node.js</a>) for instructions on importing Keras.js as a library.</p>
+<h3 id="create-new-model">Create new model</h3>
+<p>On instantiation, data is loaded using XHR (same-domain or CORS required), and layers are initialized as a directed acyclic graph.</p>
+<p>In the browser, URLs can be relative or absolute:</p>
+<pre><code class="js">const model = new KerasJS.Model({
   filepath: 'path/to/model.bin',
   gpu: true
 })
+</code></pre>
 
-// in Node.js, gpu flag will always be off
-// paths can be filesystem paths or absolute URLs
-// must be specified if filesystem path
-const model = new KerasJS.Model({
+<p>In Node.js, the <code>gpu</code> flag will always be off, as there is no WebGL interface available. <code>filepath</code> can be a file system path or an absolute URL. If <code>filepath</code> is a file system path, the additional <code>filesystem</code> flag must be specified:</p>
+<pre><code class="js">const model = new KerasJS.Model({
   filepath: 'path/to/model.bin',
   filesystem: true
 })
 </code></pre>
 
-<p>Additional configuration options (shown below are default values):</p>
+<p>Additional configuration options are available (shown below are default values):</p>
 <pre><code class="js">{
   filepath: 'path/to/model.bin',
   headers: {},
@@ -203,6 +202,20 @@ const model = new KerasJS.Model({
 }
 </code></pre>
 
+<ul>
+<li>
+<p><code>headers</code> - Pass in additional headers during file request, authorization credentials or cache control settings, for example.</p>
+</li>
+<li>
+<p><code>transferLayerOutputs</code> - In GPU mode, this setting will transfer the outputs of each layer from GPU to CPU so that they can be accessed (e.g., for visualization purposes -- see the <a href="https://github.com/transcranial/keras-js/blob/master/demos/src/components/models/MnistCnn.vue">MNIST CNN</a> or <a href="https://github.com/transcranial/keras-js/blob/master/demos/src/components/models/MnistVae.vue">MNIST VAE</a> demos). Otherwise, they will remain as WebGL texture objects. Turning this on will significantly slow down performance.</p>
+</li>
+<li>
+<p><code>pauseAfterLayerCalls</code> - Turning this on will chunk synchronous calls on <code>Model.predict()</code> to per-layer instead of per-model. This allows DOM updates and other main thread operations to proceed after each layer. Otherwise, <code>Model.predict()</code> will block the event loop during the duration of the call.</p>
+</li>
+<li>
+<p><code>visualizations</code> - Array of visualizations to activate. See the <a href="https://transcranial.github.io/keras-js-docs/visualizations/overview">visualizations section</a> for further details.</p>
+</li>
+</ul>
 <h3 id="predict">Predict</h3>
 <p>The class method <code>ready()</code> returns a Promise which resolves when initialization steps are complete. Then, use <code>predict()</code> to run a forward pass with the input data (also returns a Promise).</p>
 <p>For Keras <code>Model</code> models, the input data object has keys corresponding to the names of the input layers. For <code>Sequential</code> models, the single key should be <code>input</code>. Values are the flattened Float32Array representations of the input data. Input tensor shapes are specified in the model config.</p>
