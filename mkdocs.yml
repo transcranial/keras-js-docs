@@ -11,8 +11,8 @@ pages:
   - Usage: usage.md
   - Caching: caching.md
   - Security: security.md
-  - Visualizations: 
-    - Class-Activation Mapping: visualizations/cam.md
+  - Architecture Diagrams: diagrams.md
+  - Visualizations: visualizations.md
   - API:
     - Model: api/model.md
     - Tensor: api/tensor.md

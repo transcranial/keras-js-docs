@@ -22,7 +22,7 @@ In GPU mode, computation is performed by WebGL shaders. All layers implement a G
 
 There are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.
 
-There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are [caching](http://localhost:8000/caching/) and [quantization](http://localhost:8000/conversion/#quantization) strategies to address this.
+There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are [caching](caching) and [quantization](conversion/#quantization) strategies to address this.
 
 ## Limitations
 
