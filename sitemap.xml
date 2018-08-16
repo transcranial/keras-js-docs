@@ -1,118 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
     <url>
-     <loc>/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/conversion/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/setup/browser/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/setup/webpack/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/setup/node/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/usage/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/caching/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/security/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/diagrams/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
     <url>
-     <loc>/visualizations/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-        
     <url>
-     <loc>/api/model/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/api/tensor/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/api/layer/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
     <url>
-     <loc>/api/webgl2/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-        
-    
-
-    
     <url>
-     <loc>/development/</loc>
-     <lastmod>2018-01-06</lastmod>
+     <loc>None</loc>
+     <lastmod>2018-08-16</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
 </urlset>

@@ -7,24 +7,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="None">
   
-  <link rel="shortcut icon" href="./img/favicon.ico">
+  <link rel="shortcut icon" href="img/favicon.ico">
   <title>Home - Keras.js Documentation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
-  <link rel="stylesheet" href="./css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="./css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="./css/highlight.css">
+  <link rel="stylesheet" href="css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
   
   <script>
     // Current page data
     var mkdocs_page_name = "Home";
     var mkdocs_page_input_path = "index.md";
-    var mkdocs_page_url = "/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="./js/jquery-2.1.1.min.js"></script>
-  <script src="./js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="./js/highlight.pack.js"></script> 
+  <script src="js/jquery-2.1.1.min.js" defer></script>
+  <script src="js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -38,7 +39,7 @@
         <a href="." class="icon icon-home"> Keras.js Documentation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="./search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
@@ -49,7 +50,7 @@
           
             <li class="toctree-l1 current">
 		
-    <a class="current" href=".">Home</a>
+    <span class="caption-text">Home</span>
     <ul class="subnav">
             
     <li class="toctree-l2"><a href="#introduction">Introduction</a></li>
@@ -183,6 +184,10 @@
             <div class="section">
               
                 <p align="center">
+  <strong>**This project is no longer active. Please check out <a href="http://js.tensorflow.org">TensorFlow.js</a>.**<br/>The <a href="https://transcranial.github.io/keras-js">Keras.js demos</a> still work but is no longer updated.</strong>
+</p>
+
+<p align="center">
   <a href="https://transcranial.github.io/keras-js">
     <img src="https://cdn.rawgit.com/transcranial/keras-js/73aa4cca/assets/logo.svg" width="300px" />
   </a>
@@ -199,7 +204,7 @@
 <h2 id="features">Features</h2>
 <p>In GPU mode, computation is performed by WebGL shaders. All layers implement a GPU version of its computation call, so CPU &lt;-&gt; GPU data transfer only occurs at the start and at the end of each predict call. This results in 1-2 orders of magnitude faster performance over CPU mode.</p>
 <p>There are a myriad of benefits to running neural networks client-side in the browser, including but not limited to: reduced data transfer and latency of server-client communication, the ability to offload computation to end-user clients, privacy and security.</p>
-<p>There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are <a href="./caching">caching</a> and <a href="./conversion/#quantization">quantization</a> strategies to address this.</p>
+<p>There are always tradeoffs to consider, of course. For example, eliminating the need to upload mode input data repeatedly comes at the cost of an initial model file download. Depending on the size of input data and number of uses per model download, this can be a worthwhile tradeoff. Additionally, there are <a href="caching">caching</a> and <a href="conversion/#quantization">quantization</a> strategies to address this.</p>
 <h2 id="limitations">Limitations</h2>
 <p><strong>WebGL 2</strong></p>
 <p>To run GPU mode in the browser, WebGL 2 (which uses the OpenGL ES 3.0 specification) is required. Unfortunately, this is not supported in all browsers, yet. We use extensively <a href="https://webgl2fundamentals.org/webgl/lessons/webgl2-whats-new.html">features exclusive to WebGL 2</a>, so this unfortunately is a hard requirement. The capabilities which WebGL 2 affords us greatly outweigh the c`urrent browser restrictions. To date, <a href="https://caniuse.com/webgl2">not all browsers support WebGL 2</a>, but support by all major browsers should happen at some point in the future.</p>
@@ -341,14 +346,13 @@
     </span>
 </div>
     <script>var base_url = '.';</script>
-    <script src="./js/theme.js"></script>
-      <script src="./search/require.js"></script>
-      <script src="./search/search.js"></script>
+    <script src="js/theme.js" defer></script>
+      <script src="search/main.js" defer></script>
 
 </body>
 </html>
 
 <!--
-MkDocs version : 0.17.2
-Build Date UTC : 2018-01-07 04:06:49
+MkDocs version : 1.0
+Build Date UTC : 2018-08-16 16:42:07
 -->
