@@ -1,4 +1,8 @@
 <p align="center">
+  <strong>**This project is no longer active. Please check out <a href="http://js.tensorflow.org">TensorFlow.js</a>.**<br/>The <a href="https://transcranial.github.io/keras-js">Keras.js demos</a> still work but is no longer updated.</strong>
+</p>
+
+<p align="center">
   <a href="https://transcranial.github.io/keras-js">
     <img src="https://cdn.rawgit.com/transcranial/keras-js/73aa4cca/assets/logo.svg" width="300px" />
   </a>
@@ -46,90 +50,90 @@ Currently, there is no way to port custom Lambda layers, as these will need to b
 
 **Advanced Activations**
 
-* ELU
-* LeakyReLU
-* PReLU
-* ThresholdedReLU
+- ELU
+- LeakyReLU
+- PReLU
+- ThresholdedReLU
 
 **Convolutional**
 
-* Conv1D
-* Conv2D
-* Conv2DTranspose
-* Conv3D
-* Cropping1D
-* Cropping2D
-* Cropping3D
-* SeparableConv2D
-* UpSampling1D
-* UpSampling2D
-* UpSampling3D
-* ZeroPadding1D
-* ZeroPadding2D
-* ZeroPadding3D
+- Conv1D
+- Conv2D
+- Conv2DTranspose
+- Conv3D
+- Cropping1D
+- Cropping2D
+- Cropping3D
+- SeparableConv2D
+- UpSampling1D
+- UpSampling2D
+- UpSampling3D
+- ZeroPadding1D
+- ZeroPadding2D
+- ZeroPadding3D
 
 **Core**
 
-* Activation
-* Dense
-* Dropout
-* Flatten
-* Permute
-* RepeatVector
-* Reshape
-* SpatialDropout1D
-* SpatialDropout2D
-* SpatialDropout3D
+- Activation
+- Dense
+- Dropout
+- Flatten
+- Permute
+- RepeatVector
+- Reshape
+- SpatialDropout1D
+- SpatialDropout2D
+- SpatialDropout3D
 
 **embeddings**
 
-* Embedding
+- Embedding
 
 **Merge**
 
-* Add
-* Average
-* Concatenate
-* Dot
-* Maximum
-* Minimum
-* Multiply
-* Subtract
+- Add
+- Average
+- Concatenate
+- Dot
+- Maximum
+- Minimum
+- Multiply
+- Subtract
 
 **Noise**
 
-* GaussianDropout
-* GaussianNoise
+- GaussianDropout
+- GaussianNoise
 
 **Normalization**
 
-* BatchNormalization
+- BatchNormalization
 
 **Pooling**
 
-* AveragePooling1D
-* AveragePooling2D
-* AveragePooling3D
-* GlobalAveragePooling1D
-* GlobalAveragePooling2D
-* GlobalAveragePooling3D
-* GlobalMaxPooling1D
-* GlobalMaxPooling2D
-* GlobalMaxPooling3D
-* MaxPooling1D
-* MaxPooling2D
-* MaxPooling3D
+- AveragePooling1D
+- AveragePooling2D
+- AveragePooling3D
+- GlobalAveragePooling1D
+- GlobalAveragePooling2D
+- GlobalAveragePooling3D
+- GlobalMaxPooling1D
+- GlobalMaxPooling2D
+- GlobalMaxPooling3D
+- MaxPooling1D
+- MaxPooling2D
+- MaxPooling3D
 
 **Recurrent**
 
-* GRU
-* LSTM
-* SimpleRNN
+- GRU
+- LSTM
+- SimpleRNN
 
 **Wrappers**
 
-* Bidirectional
-* TimeDistributed
+- Bidirectional
+- TimeDistributed
 
 ## License
 
